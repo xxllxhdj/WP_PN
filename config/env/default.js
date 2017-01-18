@@ -9,7 +9,11 @@ module.exports = {
     db: {
         promise: global.Promise
     },
-    weToken: 'xxllxhdj',
+    wechat: {
+        token: 'xxllxhdj',
+        appid: 'wx9fcb469d7edf6535',
+        appsecret: '320e57bfe53a7351c87ffb46f7b3ae5d'
+    },
     port: process.env.PORT || 4000,
     host: process.env.HOST || '0.0.0.0',
     // DOMAIN config should be set to the fully qualified application accessible

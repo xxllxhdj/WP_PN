@@ -73,7 +73,7 @@ function checkSignature(req) {
     if (!timestamp || !nonce) {
         return false;
     }
-    var key =[config.weToken, timestamp, nonce].sort().join('');
+    var key =[config.wechat.token, timestamp, nonce].sort().join('');
     var sha1 = crypto.createHash('sha1').update(key).digest('hex');
     return sha1 === req.query.signature;
 }
