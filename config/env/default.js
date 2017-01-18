@@ -9,6 +9,7 @@ module.exports = {
     db: {
         promise: global.Promise
     },
+    weToken: 'xxllxhdj',
     port: process.env.PORT || 4000,
     host: process.env.HOST || '0.0.0.0',
     // DOMAIN config should be set to the fully qualified application accessible
