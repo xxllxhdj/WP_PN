@@ -1,6 +1,9 @@
 
 var fs = require('fs'),
+    path = require('path'),
+    config = require(path.resolve('./config/config')),
     chalk = require('chalk'),
+    wechat = require('wechat'),
     wechatapi = require('../controllers/wechatapi.server.controller'),
     wechatController = require('../controllers/wechat.server.controller');
 
@@ -14,5 +17,7 @@ module.exports = function(app) {
         wechatapi.createMenu(menu, function() {});
     });
 
-    app.get('/', wechatController.checkWechatSign);
+    app.use('/', wechat(config.wechat.token, wechat.text(function (message, req, res, next) {
+        res.reply(message.Content);
+    })));
 };
