@@ -2,17 +2,12 @@
 
 var validator = require('validator'),
     path = require('path'),
-    config = require(path.resolve('./config/config')),
-    crypto = require('crypto');
+    config = require(path.resolve('./config/config'));
 
 /**
  * Render the main application page
  */
 exports.renderIndex = function(req, res) {
-    if (checkSignature(req)) {
-        res.end(req.query.echostr);
-        return;
-    }
     var safeUserObject = null;
     if (req.user) {
         safeUserObject = {
@@ -66,14 +61,3 @@ exports.renderNotFound = function(req, res) {
         }
     });
 };
-
-function checkSignature(req) {
-    var timestamp = req.query.timestamp,
-        nonce = req.query.nonce;
-    if (!timestamp || !nonce) {
-        return false;
-    }
-    var key =[config.wechat.token, timestamp, nonce].sort().join('');
-    var sha1 = crypto.createHash('sha1').update(key).digest('hex');
-    return sha1 === req.query.signature;
-}
