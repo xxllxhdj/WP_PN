@@ -8,6 +8,14 @@ var fs = require('fs'),
     wechatController = require('../controllers/wechat.server.controller');
 
 module.exports = function(app) {
+    initMenu();
+
+    app.use('/', wechat(config.wechat.token, wechat.text(function (message, req, res, next) {
+        res.reply(message.Content);
+    }).event(wechatController.wechatEvent)));
+};
+
+function initMenu() {
     fs.readFile('./modules/Wechat/data/menu.json', 'utf8', function (err, menu) {
         if (err) {
             console.error(chalk.red('Could not read menu.json!'));
@@ -16,8 +24,4 @@ module.exports = function(app) {
         }
         wechatapi.createMenu(menu, function() {});
     });
-
-    app.use('/', wechat(config.wechat.token, wechat.text(function (message, req, res, next) {
-        res.reply(message.Content);
-    })));
-};
+}
