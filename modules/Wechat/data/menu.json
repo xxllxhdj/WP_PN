@@ -1,0 +1,48 @@
+{
+    "button": [{
+        "name": "消息",
+        "sub_button": [{
+            "type": "click",
+            "name": "文本",
+            "key": "MSG_TEXT"
+        }, {
+            "type": "click",
+            "name": "图片",
+            "key": "MSG_IMAGE"
+        }, {
+            "type": "click",
+            "name": "语音",
+            "key": "MSG_VOICE"
+        }, {
+            "type": "click",
+            "name": "视频",
+            "key": "MSG_VOIDEO"
+        }, {
+            "type": "click",
+            "name": "图文",
+            "key": "MSG_PIC"
+        }]
+    }, {
+        "name": "菜单",
+        "sub_button": [{
+            "type": "view",
+            "name": "搜索",
+            "url": "http://www.soso.com/"
+        }, {
+            "type": "view",
+            "name": "视频",
+            "url": "http://v.qq.com/"
+        }, {
+            "type": "click",
+            "name": "赞一下我们",
+            "key": "V1001_GOOD"
+        }]
+    }, {
+        "name": "微网页",
+        "sub_button": [{
+            "type": "view",
+            "name": "Button",
+            "url": "http://101.251.244.131:6500/weui/button.html"
+        }]
+    }]
+}
