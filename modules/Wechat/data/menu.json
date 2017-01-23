@@ -7,20 +7,12 @@
             "key": "MSG_TEXT"
         }, {
             "type": "click",
-            "name": "图片消息",
-            "key": "MSG_IMAGE"
-        }, {
-            "type": "click",
-            "name": "语音消息",
-            "key": "MSG_VOICE"
-        }, {
-            "type": "click",
-            "name": "视频消息",
-            "key": "MSG_VOIDEO"
-        }, {
-            "type": "click",
             "name": "图文消息",
             "key": "MSG_PIC"
+        }, {
+            "type": "click",
+            "name": "多条图文",
+            "key": "MSG_PICS"
         }]
     }, {
         "name": "微网页",
