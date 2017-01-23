@@ -3,46 +3,42 @@
         "name": "消息",
         "sub_button": [{
             "type": "click",
-            "name": "文本",
+            "name": "文本消息",
             "key": "MSG_TEXT"
         }, {
             "type": "click",
-            "name": "图片",
+            "name": "图片消息",
             "key": "MSG_IMAGE"
         }, {
             "type": "click",
-            "name": "语音",
+            "name": "语音消息",
             "key": "MSG_VOICE"
         }, {
             "type": "click",
-            "name": "视频",
+            "name": "视频消息",
             "key": "MSG_VOIDEO"
         }, {
             "type": "click",
-            "name": "图文",
+            "name": "图文消息",
             "key": "MSG_PIC"
-        }]
-    }, {
-        "name": "菜单",
-        "sub_button": [{
-            "type": "view",
-            "name": "搜索",
-            "url": "http://www.soso.com/"
-        }, {
-            "type": "view",
-            "name": "视频",
-            "url": "http://v.qq.com/"
-        }, {
-            "type": "click",
-            "name": "赞一下我们",
-            "key": "V1001_GOOD"
         }]
     }, {
         "name": "微网页",
         "sub_button": [{
             "type": "view",
-            "name": "Button",
+            "name": "按钮",
             "url": "http://101.251.244.131:6500/weui/button.html"
+        }]
+    }, {
+        "name": "帮助",
+        "sub_button": [{
+            "type": "view",
+            "name": "微信UI",
+            "url": "http://101.251.244.131:6500/lib/weui/dist/example/index.html"
+        }, {
+            "type": "view",
+            "name": "微信JS-SDK",
+            "url": "http://demo.open.weixin.qq.com/jssdk"
         }]
     }]
 }
