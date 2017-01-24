@@ -25,7 +25,7 @@ exports.wechatEvent = function(message, req, res, next) {
         res.reply([{
             title: '微信公众平台',
             description: '给企业和组织提供更强大的业务服务与用户管理能力,帮助企业快速实现全新的公众号服务平台。',
-            picurl: 'http://101.251.244.131:6500/img/wechat.png',
+            picurl: 'http://101.251.244.131:6500/img/wechat.jpg',
             url: 'https://mp.weixin.qq.com/'
         }, {
             title: '微信UI',
