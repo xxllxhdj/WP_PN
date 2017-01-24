@@ -29,6 +29,10 @@
             "url": "http://101.251.244.131:6500/lib/weui/dist/example/index.html"
         }, {
             "type": "view",
+            "name": "微信UI.js",
+            "url": "https://weui.io/weui.js/"
+        }, {
+            "type": "view",
             "name": "微信JS-SDK",
             "url": "http://demo.open.weixin.qq.com/jssdk"
         }]
