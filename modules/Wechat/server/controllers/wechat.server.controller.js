@@ -1,7 +1,8 @@
 'use strict';
 
 var path = require('path'),
-    config = require(path.resolve('./config/config'));
+    config = require(path.resolve('./config/config')),
+    wechatapi = require('../controllers/wechatapi.server.controller');
 
 exports.wechatEvent = function(message, req, res, next) {
     if (message.Event === 'subscribe') {
@@ -43,6 +44,41 @@ exports.wechatEvent = function(message, req, res, next) {
             picurl: 'http://101.251.244.131:6500/img/weui.png',
             url: 'http://demo.open.weixin.qq.com/jssdk'
         }]);
+        return;
+    }
+    if (message.EventKey === 'MSG_TPL') {
+        var templateId = 'TU0Bv_pMvTjJO0Y1fBFyXio3yu8SXaV4JhX3dJ86eFM';
+        var url = 'http://weixin.qq.com/download';
+        var date = new Date();
+        var data = {
+            first: {
+                value: '尊敬的客户，您的订单已支付成功',
+                color: '#173177'
+            },
+            keyword1: {
+                value: '2017款背包',
+                color: '#173177'
+            },
+            keyword2: {
+                value: date.valueOf().toString(),
+                color: '#173177'
+            },
+            keyword3: {
+                value: '150元',
+                color: '#173177'
+            },
+            keyword4: {
+                value: date.toString(),
+                color: '#173177'
+            },
+            remark: {
+                value: '感谢您的光临',
+                color: '#173177'
+            }
+        };
+        wechatapi.sendTemplate(message.FromUserName, templateId, url, data, function (err, result) {
+            res.end();
+        });
         return;
     }
     next();

@@ -13,6 +13,10 @@
             "type": "click",
             "name": "多条图文",
             "key": "MSG_PICS"
+        }, {
+            "type": "click",
+            "name": "模板消息",
+            "key": "MSG_TPL"
         }]
     }, {
         "name": "微网页",
